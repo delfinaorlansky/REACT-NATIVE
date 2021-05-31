@@ -5,7 +5,8 @@ import {
   Text,
   Image,
   ImageBackground,
-  TouchableOpacity
+  TouchableOpacity,
+  Card
  
 } from 'react-native';
 
@@ -13,6 +14,7 @@ import { stylesButton, stylesConsola, stylesText } from './src/Styles/stilo';
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Tarjeta from "./Tarjeta";
 
 
 
@@ -22,7 +24,7 @@ class App extends Component{
     this.state = {
       data: [],
       isLoading: true,
-      persona: {}
+      usuariosa: {}
       
     }
   }
@@ -52,7 +54,7 @@ componentDidMount() {
     
     if(jsonValue !== null){
       const jsonParsed = JSON.parse(jsonValue);
-      this.setState({persona: jsonParsed});
+      this.setState({usuariosa: jsonParsed});
     }else{
       console.log('');
     }
@@ -62,15 +64,15 @@ componentDidMount() {
 }
 
 render() {
- const usuarios = this.state.data.map(usuario=> {
+ const usuarios = this.state.data.map(usuarios=> {
    return(
-      <Text key={usuario.login.uuid}> {usuario.login.uuid} </Text>
+      <Text key={usuarios.login.uuid}> {usuarios.login.uuid} </Text>
    )
  })
   return (
 
     <View style= {{flex: 1, backgroundColor: 'black'}}>
-   {usuarios}
+
       <View style= {stylesConsola.stiloConsola}> 
      
       <View style= {stylesConsola.stiloIcon}></View>
@@ -85,6 +87,16 @@ render() {
          </TouchableOpacity>
         
         <Text style={stylesConsola.stiloConsolaTexto}> MyConections </Text> 
+
+        <View>
+
+        {usuarios}
+
+        
+       
+        </View>
+
+
       </View>
       
 
