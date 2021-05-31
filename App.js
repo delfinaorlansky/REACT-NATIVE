@@ -12,6 +12,8 @@ import {
 import { stylesButton, stylesConsola, stylesText } from './src/Styles/stilo';
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
 
 
 class App extends Component{
@@ -20,6 +22,8 @@ class App extends Component{
     this.state = {
       data: [],
       isLoading: true,
+      persona: {}
+      
     }
   }
 
@@ -41,6 +45,24 @@ componentDidMount() {
     console.error(error);
   });
  }
+
+ async getObjectStorage(){
+  try{
+    const jsonValue = await AsyncStorage.getItem('@myObject');
+    
+    if(jsonValue !== null){
+      const jsonParsed = JSON.parse(jsonValue);
+      this.setState({persona: jsonParsed});
+    }else{
+      console.log('');
+    }
+  }catch(error){
+    console.log(error);
+  }
+}
+
+
+ 
 
 
 render() {
@@ -66,29 +88,7 @@ render() {
       
 
   
-<View style= {{flex:  1, flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center', flexWrap: 'wrap'}}>
-   
-    <View style= {stylesButton.stiloImportar}> 
-        <Text style= {stylesButton.stiloImportarTexto}> Importar Tarjetas </Text>
-    </View>
 
-    <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 15, marginLeft: 8, flex: 1.40}}> 
-        <Text style= {{fontSize: 25, top: 40, marginLeft:30}}> Ver tarjetas importadas </Text>
-    </View>
-    
-    <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 20, marginLeft: 8, flex: 1.40}}> 
-        <Text style= {{fontSize: 25, top: 40, marginLeft:30}}> Papelera de reciclaje </Text>
-    </View>
-
-    <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 25, marginLeft: 8, flex: 1.40, justifyContent: 'space-between'}}> 
-        <Text style= {{fontSize: 25, top: 40, marginLeft:30}}> Buscar Tarjetas </Text>
-    </View>
-
-    <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 30, marginLeft: 8, flex: 1.40}}> 
-        <Text style= {{fontSize: 25, top: 40, marginLeft:30}}> Acerca de nosotros! </Text>
-    </View>
-
-    </View>
   
   </View>
 
@@ -104,4 +104,4 @@ render() {
 export default App;
 
 
- 
+
