@@ -37,7 +37,7 @@ componentDidMount() {
 
     this.setState ({
      isLoading: false,
-     data: responseJson
+     data: responseJson.results
     });
 
   })
@@ -61,15 +61,16 @@ componentDidMount() {
   }
 }
 
-
- 
-
-
 render() {
+ const usuarios = this.state.data.map(usuario=> {
+   return(
+      <Text key={usuario.login.uuid}> {usuario.login.uuid} </Text>
+   )
+ })
   return (
 
     <View style= {{flex: 1, backgroundColor: 'black'}}>
-      
+   {usuarios}
       <View style= {stylesConsola.stiloConsola}> 
      
       <View style= {stylesConsola.stiloIcon}></View>
