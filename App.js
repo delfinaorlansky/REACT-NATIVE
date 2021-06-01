@@ -10,7 +10,7 @@ import {
  
 } from 'react-native';
 
-import { styles } from '../Styles/stilo'
+import { styles } from '../Styles/stilo.js';
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';

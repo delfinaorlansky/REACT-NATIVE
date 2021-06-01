@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Alert, TouchableOpacity, View } from "react-native";
-import { styles } from '../Styles/stilo'
+import { styles } from '../Styles/stilo.js';
 
 export class Tarjeta extends Component {
     
