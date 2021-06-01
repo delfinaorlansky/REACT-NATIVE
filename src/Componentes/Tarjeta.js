@@ -1,29 +1,35 @@
 import React, {Component} from "react";
-import { View } from "react-native";
-import { stylesTarjeta } from '../Styles/stilo'
+import { Alert, TouchableOpacity, View } from "react-native";
+import { styles } from '../Styles/stilo'
 
-class App extends Component {
+export class Tarjeta extends Component {
+    
 
-    render(){
-        const { img, firstName, lastName, Email, city,State,Street,StreetNumber,Telephone, Country, Bithday,Registered, Date,id} = this.props;
   
   
-return(
+  keyExtractor = (item, idx) => idx.toString();
+  renderItem = ({item}) => {
 
-    <View style={stylesTarjeta.tarjeta}>
+    return(
 
-<Text style={stylesTarjeta.Titulo}>{firstName},{lastName}</Text>
-                   <Text style={stylesTarjeta.TextoCard} >Location: {city}, {State}, {Country}</Text>
-                   <Text style={stylesTarjeta.TextoCard}>Birthdate:{Date.substring(0,10)} </Text>
-                   <Text style={stylesTarjeta.TextoCard}>Current age: {Bithday}
-</Text>
+   <TouchableOpacity onPress={() => Alert.alert("Edad: " + item.dob.age)}>
+        
+        <View style={styles.tarjeta}>
+        
+        <Image style={styles.imagen} source={{uri: item.picture.thumbnail}}/>
+        <Text style= {styles.text}> {item.name.first}</Text>
+        <Text style= {styles.text}> {item.name.last}</Text>
+        
+        </View>
+    </TouchableOpacity>
 
-    </View>
-
-
-
-
+   
 )}
+
+separator=() => {
+    return (
+        <View style={styles.separator}/>
+    )
+}
 }
 
-export default App;

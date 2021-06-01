@@ -10,11 +10,13 @@ import {
  
 } from 'react-native';
 
-import { stylesButton, stylesConsola, stylesText } from './src/Styles/stilo';
+import { styles } from '../Styles/stilo'
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Tarjeta from "./Tarjeta";
+import Tarjetas from "../Componentes/Tarjetas";
+import Header from "../Componentes/Header";
+import {Screen_FlatList} from './Screens/Screen_FlatList'
 
 
 
@@ -30,66 +32,34 @@ class App extends Component{
   }
 
 
-componentDidMount() {
+  componentDidMount() {
 
-  const getUsersAsync = async () => {
-    try {
-        let response= await fetch ('https://randomuser.me/api/?results=50');
-        let json = await response.json();
-        return json.results;
-    } catch (error) {
-        console.log (error);
-    }
-};
+  fetch("https://randomuser.me/api/?results=10")
+  .then((response => response.json()))
+  .then ((responseJson) => {
 
-}
+    this.setState ({
+     isLoading: false,
+     data: responseJson.results
+    });
+
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+ }
+
+ 
+
+
 
 render() {
- const usuarios = this.state.data.map(usuarios=> {
-   return(
-      <Text key={usuarios.login.uuid}> {usuarios.login.uuid} </Text>
-   )
- })
-  return (
 
-    <View style= {{flex: 1, backgroundColor: 'black'}}>
-
-      <View style= {stylesConsola.stiloConsola}> 
-     
-      <View style= {stylesConsola.stiloIcon}></View>
-
-         <FontAwesomeIcon style= {stylesConsola.stiloIconSearch} icon= {faSearch} />
-         <FontAwesomeIcon style= {stylesConsola.stiloIconBell} icon= {faBell} />
-
-         <TouchableOpacity onPress= {() => this.setState({textoIngresado: this.state.textHandlerNombre + "" + this.state.textHandlerApellido + "" + this.state.textHandlerTelefono})}>
-
-         <FontAwesomeIcon style= {stylesConsola.stiloIconBars} icon={faBars}  />
-         
-         </TouchableOpacity>
-        
-        <Text style={stylesConsola.stiloConsolaTexto}> MyConections </Text> 
-
-        <View>
-
-        {usuarios}
-
-        
-       
-        </View>
-
-
-      </View>
-      
-
-  
-
-  
-  </View>
-
+  return(
+    <Screen_FlatList/>
   )
 
 }
-
 }
 
 

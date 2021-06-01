@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import { LinearGradient } from 'react-native-svg';
 
-const stylesTarjeta= StyleSheet.create({
+const styles= StyleSheet.create({
 
   tarjeta: {
     borderWidth: 3,
@@ -27,6 +27,20 @@ const stylesTarjeta= StyleSheet.create({
      marginTop: 10,
      marginBottom: 10,
     },
+
+    imagen:{
+      width: 150, 
+      height: 150, 
+      borderRadius: 10,
+     marginLeft: 75,
+     borderColor: '#00b8a9',
+     borderWidth: 3,
+    },
+
+    separator: {
+      borderBottonColor: 'black',
+      borderBottonWidth: 1,
+    }
 })
 
 const stylesButton= StyleSheet.create({
