@@ -30,37 +30,18 @@ class App extends Component{
   }
 
 
-
 componentDidMount() {
 
- fetch("https://randomuser.me/api/?results=10")
-  .then((response => response.json()))
-  .then ((responseJson) => {
-
-    this.setState ({
-     isLoading: false,
-     data: responseJson.results
-    });
-
-  })
-  .catch((error) => {
-    console.error(error);
-  });
- }
-
- async getObjectStorage(){
-  try{
-    const jsonValue = await AsyncStorage.getItem('@myObject');
-    
-    if(jsonValue !== null){
-      const jsonParsed = JSON.parse(jsonValue);
-      this.setState({usuariosa: jsonParsed});
-    }else{
-      console.log('');
+  const getUsersAsync = async () => {
+    try {
+        let response= await fetch ('https://randomuser.me/api/?results=50');
+        let json = await response.json();
+        return json.results;
+    } catch (error) {
+        console.log (error);
     }
-  }catch(error){
-    console.log(error);
-  }
+};
+
 }
 
 render() {

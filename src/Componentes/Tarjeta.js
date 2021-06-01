@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { View } from "react-native";
-import { stylesTarjeta } from './src/Styles/stilo'
+import { stylesTarjeta } from '../Styles/stilo'
 
 class App extends Component {
 
