@@ -14,9 +14,8 @@ import {
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import Tarjetas from "../Componentes/Tarjetas";
-import Header from "../Componentes/Header";
-import {Screen_FlatList} from './Screens/Screen_FlatList'
+// import Header from "../Componentes/Header";
+import {Screen_FlatList} from './src/Screens/Screen_FlatList';
 
 
 

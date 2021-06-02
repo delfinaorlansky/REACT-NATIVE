@@ -2,9 +2,10 @@ import React,  {Component} from 'react';
 import {
 
 } from 'react-native';
-import {getData} from '../Bibliotecta/RandomUsers';
+import {getData} from './Bibliotecta/RandomUsers';
 
-import Tarjeta from "../Componentes/Tarjeta";
+import Tarjeta from "./Componentes/Tarjeta";
+import Header from "./Componentes/Header";
 
 
 export class Screen_FlatList extends Component {
@@ -15,14 +16,27 @@ export class Screen_FlatList extends Component {
         }
     }
 
-    render() {
-        retun (
-<View>
-    <Tarjeta> </Tarjeta>
-</View>
-        )
+//     render() {
+        
+//         retun (
+// <View>
+//     <Header></Header>
+//     <Tarjeta> </Tarjeta>
+// </View>
+//         )
 
-    }
+//     }
+
+render() {
+
+    return(
+        <View>
+           <Header></Header>
+           <Tarjeta> </Tarjeta>
+        </View>
+    )
+  
+  }
 
     componentDidMount() {
         getData()
