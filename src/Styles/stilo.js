@@ -1,18 +1,31 @@
 import {StyleSheet} from 'react-native';
-import { LinearGradient } from 'react-native-svg';
+
 
 export const styles= StyleSheet.create({
 
+  // container: {
+  //   justifyContent: 'center',
+  //   flex: 1,
+  //   alignItems: 'center'
+  // },
+  
   tarjeta: {
-    borderWidth: 3,
-    borderRadius: 10,
-    borderColor: '#00b8a9',
-    width: 350,
-    height: 600,
-    padding: 20,
-    marginTop: 10,
-    marginBottom: 10,
-    backgroundColor: '#f8f3d4', 
+    // borderWidth: 3,
+    // borderRadius: 10,
+    // borderColor: 'black',
+    // width: 350,
+    // height: 200,
+    // padding: 20,
+    // marginTop: 10,
+    // marginBottom: 10,
+    // backgroundColor: '#F9D0F9', 
+    // marginLeft: 30\
+    margin: 5,
+    padding: 5,
+    width: 400,
+    height: 200,
+    backgroundColor: '#F9D0F9',
+  
 
   },
 
@@ -22,19 +35,20 @@ export const styles= StyleSheet.create({
     marginBottom: 10,
    },
    
-   TextoCard:{
+   textoTarjeta: {
      fontSize: 15,
      marginTop: 10,
-     marginBottom: 10,
+     marginBottom: 1,
     },
 
     imagen:{
-      width: 150, 
-      height: 150, 
-      borderRadius: 10,
-     marginLeft: 75,
-     borderColor: '#00b8a9',
-     borderWidth: 3,
+    width: 100, 
+    height: 100, 
+    borderRadius: 10,
+    marginLeft: 20,
+     borderColor: 'black',
+     borderWidth: 3
+     
     },
 
     separator: {

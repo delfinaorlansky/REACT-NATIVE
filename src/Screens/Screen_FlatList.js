@@ -19,7 +19,10 @@ export class Screen_FlatList extends Component {
     keyExtractor = (item, idx) => item.login.uuid.toString();
     renderItem = ({item}) => {
         return(
+        
+            
             <Tarjeta item={item}> </Tarjeta>
+          
         )
         
      }
@@ -35,6 +38,7 @@ render() {
 
     return(
         <View>
+               <Header/>
          <FlatList
             data={this.state.contactos} renderItem={this.renderItem} separator={this.separator} keyExtractor={this.keyExtractor}
          />
