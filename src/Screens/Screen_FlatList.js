@@ -16,16 +16,7 @@ export class Screen_FlatList extends Component {
         }
     }
 
-//     render() {
-        
-//         retun (
-// <View>
-//     <Header></Header>
-//     <Tarjeta> </Tarjeta>
-// </View>
-//         )
 
-//     }
 
 render() {
 
