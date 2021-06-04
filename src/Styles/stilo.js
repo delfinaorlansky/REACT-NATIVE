@@ -1,7 +1,7 @@
 import {StyleSheet} from 'react-native';
 import { LinearGradient } from 'react-native-svg';
 
-const styles= StyleSheet.create({
+export const styles= StyleSheet.create({
 
   tarjeta: {
     borderWidth: 3,
@@ -38,12 +38,12 @@ const styles= StyleSheet.create({
     },
 
     separator: {
-      borderBottonColor: 'black',
-      borderBottonWidth: 1,
+      borderBottomColor: 'black',
+      borderBottomWidth: 1,
     }
 })
 
-const stylesButton= StyleSheet.create({
+export const stylesButton= StyleSheet.create({
     stiloImportar: {
       borderRadius: 10, 
       width: 400, 
@@ -67,12 +67,12 @@ const stylesButton= StyleSheet.create({
 
    })
 
-  const stylesText = StyleSheet.create({
+  export const stylesText = StyleSheet.create({
     
 
   })
 
-  const stylesConsola = StyleSheet.create (
+ export const stylesConsola = StyleSheet.create (
     {
       stiloConsola: {
  
@@ -108,14 +108,5 @@ const stylesButton= StyleSheet.create({
        top: 1,
        marginLeft: 150
        },
-
-      
-        
-        
-        
- 
-       
     }
   )
-
-  export { stylesButton, stylesText, stylesConsola }

@@ -10,7 +10,7 @@ import {
  
 } from 'react-native';
 
-// import { stylesButton, stylesConsola, stylesText } from './src/Styles/stilo';
+import { stylesButton, stylesConsola, stylesText } from '../Styles/stilo';
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -45,42 +45,42 @@ return (
  ) }}
 
 
- const stylesConsola = StyleSheet.create (
-    {
-      stiloConsola: {
+//  const stylesConsola = StyleSheet.create (
+//     {
+//       stiloConsola: {
  
-      backgroundColor: '#2C2828',
-      height: 80,
+//       backgroundColor: '#2C2828',
+//       height: 80,
     
     
-},
-      stiloIconSearch: {
-        color: '#fff',
-        top: 45, 
-        marginLeft: 370
+// },
+//       stiloIconSearch: {
+//         color: '#fff',
+//         top: 45, 
+//         marginLeft: 370
 
-      },
+//       },
 
-      stiloIconBell: {
-        color: 'white', 
-        top: 30, 
-        marginLeft: 340
+//       stiloIconBell: {
+//         color: 'white', 
+//         top: 30, 
+//         marginLeft: 340
 
-      },
+//       },
 
-      stiloIconBars: {
-        color: 'white', 
-        top: 20, 
-        marginLeft: 25
+//       stiloIconBars: {
+//         color: 'white', 
+//         top: 20, 
+//         marginLeft: 25
 
-      },
+//       },
 
-      stiloConsolaTexto:{
-       color: 'white',
-       fontSize: 15,
-       top: 1,
-       marginLeft: 150
-       },
+//       stiloConsolaTexto:{
+//        color: 'white',
+//        fontSize: 15,
+//        top: 1,
+//        marginLeft: 150
+//        },
 
       
         
@@ -88,7 +88,7 @@ return (
         
  
        
-    }
-  )
+//     }
+//   )
 
 export default Header

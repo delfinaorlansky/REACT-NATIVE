@@ -1,11 +1,12 @@
 import React,  {Component} from 'react';
 import {
-
+View,
+FlatList,
 } from 'react-native';
-import {getData} from './Bibliotecta/RandomUsers';
+import {getData} from '../Biblioteca/RandomUsers';
 
-import Tarjeta from "./Componentes/Tarjeta";
-import Header from "./Componentes/Header";
+import {Tarjeta} from "../Componentes/Tarjeta";
+import Header from "../Componentes/Header";
 
 
 export class Screen_FlatList extends Component {
@@ -15,15 +16,29 @@ export class Screen_FlatList extends Component {
             contactos:  []
         }
     }
-
+    keyExtractor = (item, idx) => item.login.uuid.toString();
+    renderItem = ({item}) => {
+        return(
+            <Tarjeta item={item}> </Tarjeta>
+        )
+        
+     }
+  
+  separator=() => {
+      return (
+          <View style={styles.separator}/>
+      )
+  }
 
 
 render() {
 
     return(
         <View>
-           <Header></Header>
-           <Tarjeta> </Tarjeta>
+         <FlatList
+            data={this.state.contactos} renderItem={this.renderItem} separator={this.separator} keyExtractor={this.keyExtractor}
+         />
+
         </View>
     )
   
