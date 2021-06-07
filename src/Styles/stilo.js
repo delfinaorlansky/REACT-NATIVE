@@ -23,8 +23,9 @@ export const styles= StyleSheet.create({
     margin: 5,
     padding: 5,
     width: 400,
-    height: 200,
+    height: 400,
     backgroundColor: '#F9D0F9',
+    
   
 
   },
@@ -39,11 +40,12 @@ export const styles= StyleSheet.create({
      fontSize: 15,
      marginTop: 10,
      marginBottom: 1,
+     fontWeight:'bold',
     },
 
     imagen:{
-    width: 100, 
-    height: 100, 
+    width: 320, 
+    height: 250, 
     borderRadius: 10,
     marginLeft: 20,
      borderColor: 'black',
