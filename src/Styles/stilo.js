@@ -7,7 +7,10 @@ export const styles= StyleSheet.create({
   //   justifyContent: 'center',
   //   flex: 1,
   //   alignItems: 'center'
+  // flexWrap: 
+  // flexDirection: row
   // },
+  // //le tengo q poner dos coulumnas
   
   tarjeta: {
     // borderWidth: 3,
