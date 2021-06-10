@@ -15,6 +15,7 @@ import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortaweso
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import Header from "../Componentes/Header";
 import {Screen_FlatList} from './src/Screens/Screen_FlatList';
+import {NosotrasScreen} from './src/Screens/NosotrasScreen';
 
 
 
@@ -54,7 +55,7 @@ class App extends Component{
 render() {
 
   return(
-    <Screen_FlatList/>
+    <NosotrasScreen/>
   )
 
 }

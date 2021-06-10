@@ -3,27 +3,9 @@ import {StyleSheet} from 'react-native';
 
 export const styles= StyleSheet.create({
 
-  // container: {
-  //   justifyContent: 'center',
-  //   flex: 1,
-  //   alignItems: 'center'
-  // flexWrap: 
-  // flexDirection: row
-  // },
-  // //le tengo q poner dos coulumnas
+  
   
   tarjeta: {
-    // borderWidth: 3,
-    // borderRadius: 10,
-    // borderColor: 'black',
-    // width: 350,
-    // height: 200,
-    // padding: 20,
-    // marginTop: 10,
-    // marginBottom: 10,
-    // backgroundColor: '#F9D0F9', 
-    // marginLeft: 30\
-    margin: 5,
     padding: 5,
     width: 400,
     height: 400,
