@@ -1,12 +1,12 @@
 import React,  {Component} from 'react';
 import {
 View,
-FlatList,
 } from 'react-native';
 
 
 import Nosotras from "../Componentes/Nosotras";
 import Header from "../Componentes/Header";
+import { styles } from '../Styles/stilo';
 
 export class NosotrasScreen extends Component {
     

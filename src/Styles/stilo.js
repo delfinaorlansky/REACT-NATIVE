@@ -3,45 +3,102 @@ import {StyleSheet} from 'react-native';
 
 export const styles= StyleSheet.create({
 
-  
+  container:{
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 5
+  },
   
   tarjeta: {
     padding: 5,
-    width: 400,
-    height: 400,
-    backgroundColor: '#F9D0F9',
-    
-  
-
-  },
-
-  Titulo:{
-    fontSize: 25,
-    marginTop: 10,
-    marginBottom: 10,
-   },
-   
-   textoTarjeta: {
-     fontSize: 15,
-     marginTop: 10,
-     marginBottom: 1,
-     fontWeight:'bold',
+      width: 400,
+      height: 250,
+      backgroundColor: '#F9D0F9',
+      borderRadius: 5,
+      borderColor: 'black',
+      borderWidth: 3,
+      marginTop: 5
     },
 
+  titulo:{
+    fontSize: 20,
+    marginTop: 5,
+    
+   },
+   
+   texto: {
+    fontSize: 10,
+    marginTop: 10,
+    marginBottom: 1,
+    fontWeight:'bold',
+   },
+
     imagen:{
-    width: 320, 
-    height: 250, 
-    borderRadius: 10,
-    marginLeft: 20,
-     borderColor: 'black',
-     borderWidth: 3
+      width: 100, 
+      height: 100, 
+      borderRadius: 10,
+      marginLeft: 10,
+      borderColor: 'black',
+      borderWidth: 3
      
     },
 
     separator: {
       borderBottomColor: 'black',
       borderBottomWidth: 1,
-    }
+      height: 3
+  
+    },
+
+  })
+
+    
+export const stylesNosotras= StyleSheet.create({
+
+    tarjeta: {
+      padding: 5,
+      width: 400,
+      height: 250,
+      backgroundColor: '#F9D0F9',
+      borderRadius: 5,
+      borderColor: 'black',
+      borderWidth: 3,
+      marginTop: 5
+
+      },
+
+     
+
+    titulo:{
+      fontSize: 20,
+      marginTop: 5,
+      marginBottom: 5,
+     },
+
+     imagen:{
+      width: 100, 
+      height: 100, 
+      borderRadius: 10,
+      marginLeft: 10,
+       borderColor: 'black',
+       borderWidth: 3
+       
+      },
+
+      container:{
+        flex: 1,
+        alignItems: 'center',
+        marginTop: 5
+      },
+
+      texto: {
+        fontSize: 10,
+        marginTop: 10,
+        marginBottom: 1,
+        fontWeight:'bold',
+       },
+
+
 })
 
 export const stylesButton= StyleSheet.create({
