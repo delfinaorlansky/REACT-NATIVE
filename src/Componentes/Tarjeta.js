@@ -7,16 +7,21 @@ export class Tarjeta extends Component {
   constructor(){
       super();
         this.state = {
-          showModal: false
+          showModal: false,
+          itemModal: null
 
         }
       }
     
+showModal(item){
+  this.setState({itemModal: item,   showModal: !this.state.showModal});
+}
+   
 
-    render(){
+render () {
   return(
 
-    <TouchableOpacity  onPress={() => this.setState({showModal: !this.state.showModal}) } >
+    <TouchableOpacity  onPress={() => this.showModal(item) } >
          <View style={styles.container} >
          <View style={styles.tarjeta}>
          
@@ -38,7 +43,12 @@ export class Tarjeta extends Component {
           
           <View style={styles.modal}> 
             
-            <Text  style={styles.textModal}>HOLA</Text> 
+            <Text  style={styles.textModal}>
+              {
+              this.state.itemModal && 
+              this.state.itemModal.name.first
+              }
+              </Text> 
             <Text style={styles.closeButton} onPress={ () => this.setState({showModal: false})}> X </Text>
              </View>
 

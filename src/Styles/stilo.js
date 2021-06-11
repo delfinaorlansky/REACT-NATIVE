@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import RNGestureHandlerButton from 'react-native-gesture-handler/lib/typescript/components/GestureHandlerButton';
+
 
 
 export const styles= StyleSheet.create({
