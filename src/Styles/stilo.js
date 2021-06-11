@@ -1,4 +1,5 @@
 import {StyleSheet} from 'react-native';
+import RNGestureHandlerButton from 'react-native-gesture-handler/lib/typescript/components/GestureHandlerButton';
 
 
 export const styles= StyleSheet.create({
@@ -49,7 +50,39 @@ export const styles= StyleSheet.create({
       height: 3
   
     },
+    
+    modalContainer:  {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems:  'center',
+      backgroundColor: 'rgba(0,0,0,0.3)'
+    },
+   
+    modal: {
+      backgroundColor: 'white',
+      width: 150,
+      height: 150,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 20,
+      shadowColor: 'black',
+      elevation: 10,
+      borderStyle: 'solid',
+      borderWidth: 1,
+      borderColor: 'black'
+    },
 
+    textModal: {
+      fontSize: 20
+
+    },
+
+    closeButton: {
+    fontSize: 20,
+    position: 'absolute',
+    right: 20,
+    top: 10
+    },
   })
 
     

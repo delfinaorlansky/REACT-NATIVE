@@ -2,11 +2,13 @@ import React,  {Component} from 'react';
 import {
 View,
 FlatList,
+Modal
 } from 'react-native';
 import {getData} from '../Biblioteca/RandomUsers';
 
 import {Tarjeta} from "../Componentes/Tarjeta";
 import Header from "../Componentes/Header";
+
 
 
 export class Screen_FlatList extends Component {
