@@ -15,7 +15,8 @@ export class NosotrasScreen extends Component {
             <View style={styles.separator}/>
         )
     }
-    render() {
+    
+render() {
 
         return(
 <View>
