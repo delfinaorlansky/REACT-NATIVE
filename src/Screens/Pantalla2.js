@@ -2,19 +2,32 @@ import React, {Component} from 'react';
 import {
   View,
   Text,
-  Image,
-  ImageBackground,
-  TouchableOpacity,
-  Card
- 
+  StyleSheet
 } from 'react-native';
 
-export default class Pantalla1 extends Component {
+export class Pantalla1 extends Component {
     render(){
         return(
             <View style={styles.container}>
-            <Text> Pantalla 2 </Text>
+            <Text style = {styles.titulo}> Pantalla 2 </Text>
+            <Text style = {styles.texto} onPress={() => this.props.navigation.goBack('Pantalla1')}> Volver hacia atras </Text>
             </View>
         )
     }
 }
+const styles = StyleSheet.create({
+    container:{
+        flex:1,
+        justifyContent: 'center',
+        alignItems:'center',
+    },
+    titulo:{
+        fontSize:40,
+        fontWeight: 'bold',
+        color: 'pink',
+    },
+    texto:{
+        fontSize:30,
+        color: 'pink'
+    }
+})
