@@ -9,12 +9,12 @@ import {
  
 } from 'react-native';
 
-export default class Pantalla1 extends Component (
+export default class Pantalla1 extends Component {
     render(){
         return(
-            <View>
+            <View style={styles.container}>
             <Text> Pantalla 2 </Text>
             </View>
         )
     }
-)
+}

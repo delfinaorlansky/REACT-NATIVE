@@ -9,8 +9,8 @@ import {
   TouchableOpacity,
   Card
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack'
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
 import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -20,6 +20,7 @@ import {NosotrasScreen} from './src/Screens/NosotrasScreen';
 import {Pantalla1} from './src/Screens/Pantalla1';
 import {Pantalla2} from './src/Screens/Pantalla2';
 
+const Stack = createStackNavigator();
 
 
 class App extends Component{
@@ -32,9 +33,6 @@ class App extends Component{
       
     }
   }
-  const Stack = createStackNavigator();
-
-
   componentDidMount() {
 
   fetch("https://randomuser.me/api/?results=10")
@@ -52,21 +50,21 @@ class App extends Component{
   });
  }
 
- 
-
-
-
 render() {
 
   return(
-    <Screen_FlatList/>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name ="Pantalla 1" component={Pantalla1}/>
+        <Stack.Screen name ="Pantalla 2" component={Pantalla2}/>
+        {/* aca tenemos q poner todas las paginas que creemos */}
+      </Stack.Navigator>
+    </NavigationContainer>
+ 
   )
 
 }
 }
-
-
-
 
 export default App;
 
