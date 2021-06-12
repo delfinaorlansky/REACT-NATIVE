@@ -8,7 +8,7 @@ import {
 export class Pantalla1 extends Component (
     render(){
         return(
-            <View style=styles.container>
+            <View style={styles.container}>
             <Text> Pantalla 1 </Text>
             </View>
         )
