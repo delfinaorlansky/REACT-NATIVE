@@ -18,8 +18,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {Screen_FlatList} from './src/Screens/Screen_FlatList';
 import {NosotrasScreen} from './src/Screens/NosotrasScreen';
 import {Pantalla1} from './src/Screens/Pantalla1';
-import {Pantalla2} from './src/Screens/Pantalla2';
 
+import {Pantalla2} from './src/Screens/Pantalla2';
 const Stack = createStackNavigator();
 
 
@@ -53,13 +53,15 @@ class App extends Component{
 render() {
 
   return(
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name ="Pantalla 1" component={Pantalla1}/>
-        <Stack.Screen name ="Pantalla 2" component={Pantalla2}/>
-        {/* aca tenemos q poner todas las paginas que creemos */}
-      </Stack.Navigator>
-    </NavigationContainer>
+
+    <Screen_FlatList/>
+    // <NavigationContainer>
+    //   <Stack.Navigator>
+    //     <Stack.Screen name ="Pantalla 1" component={Pantalla1}/>
+    //     <Stack.Screen name ="Pantalla 2" component={Pantalla2}/>
+    //     {/* aca tenemos q poner todas las paginas que creemos */}
+    //   </Stack.Navigator>
+    // </NavigationContainer>
  
   )
 

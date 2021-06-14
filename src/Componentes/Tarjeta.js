@@ -48,6 +48,8 @@ render () {
               this.state.itemModal && 
               this.state.itemModal.name.first
               }
+
+              
               </Text> 
             <Text style={styles.closeButton} onPress={ () => this.setState({showModal: false})}> X </Text>
              </View>

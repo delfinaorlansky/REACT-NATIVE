@@ -1,3 +1,5 @@
+
+
 import React, {Component} from 'react';
 import {
   View,
@@ -5,7 +7,7 @@ import {
   StyleSheet
 } from 'react-native';
 
-export class Pantalla1 extends Component {
+export class Pantalla2 extends Component {
     render(){
         return(
             <View style={styles.container}>
