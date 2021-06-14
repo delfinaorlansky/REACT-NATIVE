@@ -137,23 +137,31 @@ export const stylesNosotras= StyleSheet.create({
 export const stylesButton= StyleSheet.create({
     
   stiloImportar: {
-      padding: 5,
-      width: 400,
-      height: 100,
+    
+     
       backgroundColor: '#F9D0F9',
-      borderRadius: 5,
-      borderColor: 'black',
-      borderWidth: 3,
-      marginTop: 30
+      width: 400,
+      height: 150,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderRadius: 20,
+      shadowColor: 'black',
+     
+      borderStyle: 'solid',
+      borderWidth: 1,
+      borderColor: 'white',
+      marginTop: 30,
+
 
     },
 
     stiloImportarTexto: {
-      fontSize: 40,
+      fontSize: 30,
       // marginTop: 10,
       // marginLeft: 15,
       alignItems: 'center',
-      marginTop: 15
+      marginTop: 7,
+      fontWeight:'bold',
 
     },
 
