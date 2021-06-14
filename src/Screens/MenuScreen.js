@@ -9,13 +9,11 @@ import {
  
 } from 'react-native';
 
-import { stylesButton, stylesConsola, stylesText } from './src/Styles/stilo';
-import { FontAwesomeIcon, fontAwesomeIcon } from   '@fortawesome/react-native-fontawesome';
-import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortawesome/free-solid-svg-icons';
-import { Header } from 'react-native/Libraries/NewAppScreen';
+// import { stylesButton} from './src/Styles/stilo';
 import Header from "../Componentes/Header";
+import { stylesButton } from '../Styles/stilo';
 
-export class Menu extends Component {
+export class MenuScreen extends Component {
 
 render() {
   return (

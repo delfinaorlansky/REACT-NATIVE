@@ -5,5 +5,5 @@ import {
   StyleSheet
 } from 'react-native';
 
-export class Pantalla1 extends Component {
+export class PapeleraScreen extends Component {
 }
