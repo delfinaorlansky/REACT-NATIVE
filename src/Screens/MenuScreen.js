@@ -1,4 +1,3 @@
-
 import React, {Component} from 'react';
 import { render } from 'react-dom';
 import {
@@ -16,13 +15,7 @@ import {faBars, faBell, faCoffee, faEnvelopeOpenText, faSearch} from '@fortaweso
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import Header from "../Componentes/Header";
 
-
-
-
-
-
 export class Menu extends Component {
-
 
 render() {
   return (
@@ -32,12 +25,11 @@ render() {
     <Header></Header>
       
 
-  
 <View style= {{flex:  1, flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center', flexWrap: 'wrap'}}>
 
 <View style= {stylesButton.stiloImportar}> 
 
-<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Pantalla 2')}> Tarjetas Importadas </Text>
+<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Screen FlatList')}> Tarjetas Importadas </Text>
     
   </View>
 
