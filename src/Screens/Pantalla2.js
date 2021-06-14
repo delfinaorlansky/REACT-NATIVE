@@ -12,7 +12,7 @@ export class Pantalla2 extends Component {
         return(
             <View style={styles.container}>
             <Text style = {styles.titulo}> Pantalla 2 </Text>
-            <Text style = {styles.texto} onPress={() => this.props.navigation.goBack('Pantalla1')}> Volver hacia atras </Text>
+            <Text style = {styles.texto} onPress={() => this.props.navigation.goBack('Pantalla 1')}> Volver hacia atras </Text>
             </View>
         )
     }

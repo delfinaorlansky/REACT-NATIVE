@@ -54,14 +54,13 @@ render() {
 
   return(
 
-    <Screen_FlatList/>
-    // <NavigationContainer>
-    //   <Stack.Navigator>
-    //     <Stack.Screen name ="Pantalla 1" component={Pantalla1}/>
-    //     <Stack.Screen name ="Pantalla 2" component={Pantalla2}/>
-    //     {/* aca tenemos q poner todas las paginas que creemos */}
-    //   </Stack.Navigator>
-    // </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name ="Pantalla 1" component={Pantalla1}/>
+        <Stack.Screen name ="Pantalla 2" component={Pantalla2}/>
+        {/* aca tenemos q poner todas las paginas que creemos */}
+      </Stack.Navigator>
+    </NavigationContainer>
  
   )
 

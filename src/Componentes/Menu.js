@@ -33,8 +33,22 @@ render() {
 
   
 <View style= {{flex:  1, flexDirection:'row', justifyContent: 'flex-start', alignItems: 'center', flexWrap: 'wrap'}}>
+
+<View style= {stylesButton.stiloImportar}> 
+
+<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Pantalla 2')}> Tarjetas Importadas </Text>
+    
+  </View>
+
+  <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 20, marginLeft: 8, flex: 1.40}}> 
+        <Text style= {{fontSize: 25, top: 40, marginLeft:30}} onPress={() => this.props.navigation.navigate('Pantalla 4')} > Papelera de reciclaje </Text>
+    </View>
+
+    <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 30, marginLeft: 8, flex: 1.40}}> 
+        <Text style= {{fontSize: 25, top: 40, marginLeft:30}} onPress={() => this.props.navigation.navigate('Pantalla 3')}> Acerca de nosotros! </Text>
+    </View>
    
-    <View style= {stylesButton.stiloImportar}> 
+    {/* <View style= {stylesButton.stiloImportar}> 
         <Text style= {stylesButton.stiloImportarTexto}> Importar Tarjetas </Text>
     </View>
 
@@ -52,7 +66,7 @@ render() {
 
     <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 30, marginLeft: 8, flex: 1.40}}> 
         <Text style= {{fontSize: 25, top: 40, marginLeft:30}}> Acerca de nosotros! </Text>
-    </View>
+    </View> */}
 
     </View>
   

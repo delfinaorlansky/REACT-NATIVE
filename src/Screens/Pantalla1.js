@@ -10,7 +10,7 @@ export class Pantalla1 extends Component {
         return(
             <View style={styles.container}>
             <Text style = {styles.titulo}> Pantalla 1 </Text>
-            <Text style = {styles.texto} onPress={() => this.props.navigation.navigate('Pantalla2')}> Ir a la pantalla 2 </Text>
+            <Text style = {styles.texto} onPress={() => this.props.navigation.navigate('Pantalla 2')}> Ir a la pantalla 2 </Text>
             </View>
         )
     }
