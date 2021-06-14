@@ -20,6 +20,8 @@ import {NosotrasScreen} from './src/Screens/NosotrasScreen';
 import {Pantalla1} from './src/Screens/Pantalla1';
 
 import {Pantalla2} from './src/Screens/Pantalla2';
+
+import {PapeleraScreen} from './src/Screens/PapeleraScreen';
 const Stack = createStackNavigator();
 
 
@@ -58,6 +60,8 @@ render() {
       <Stack.Navigator>
         <Stack.Screen name ="Pantalla 1" component={Pantalla1}/>
         <Stack.Screen name ="Pantalla 2" component={Pantalla2}/>
+        <Stack.Screen name ="Pantalla 3" component={PapeleraScreen}/>
+        <Stack.Screen name ="Pantalla 4" component={NosotrasScreen}/>
         {/* aca tenemos q poner todas las paginas que creemos */}
       </Stack.Navigator>
     </NavigationContainer>
