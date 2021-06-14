@@ -58,7 +58,7 @@ render() {
         <Stack.Screen name ="Menu principal" component={MenuScreen}/>
         <Stack.Screen name ="Screen FlatList" component={Screen_FlatList}/>
         <Stack.Screen name ="Papelera" component={PapeleraScreen}/>
-        <Stack.Screen name ="Pantalla 4" component={NosotrasScreen}/>
+        <Stack.Screen name ="NosotrasScreen" component={NosotrasScreen}/>
         {/* aca tenemos q poner todas las paginas que creemos */}
       </Stack.Navigator>
     </NavigationContainer>

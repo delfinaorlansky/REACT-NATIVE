@@ -37,7 +37,7 @@ render() {
     </View>
 
     <View style= {{borderRadius: 10, width: 200, height: 150,  backgroundColor: 'pink',  top: 30, marginLeft: 8, flex: 1.40}}> 
-        <Text style= {{fontSize: 25, top: 40, marginLeft:30}} onPress={() => this.props.navigation.navigate('Pantalla 4')}> Acerca de nosotros! </Text>
+        <Text style= {{fontSize: 25, top: 40, marginLeft:30}} onPress={() => this.props.navigation.navigate('NosotrasScreen')}> Acerca de nosotros! </Text>
     </View>
    
     {/* <View style= {stylesButton.stiloImportar}> 
