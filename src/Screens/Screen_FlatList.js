@@ -42,8 +42,8 @@ render() {
         <View>
                <Header/>
          <FlatList
-            data={this.state.contactos} renderItem={this.renderItem} separator={this.separator} keyExtractor={this.keyExtractor}
-         />
+            data={this.state.contactos} renderItem={this.renderItem} separator={this.separator} keyExtractor={this.keyExtractor}/>
+
 
         </View>
     )

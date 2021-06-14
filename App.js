@@ -17,10 +17,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // import Header from "../Componentes/Header";
 import {Screen_FlatList} from './src/Screens/Screen_FlatList';
 import {NosotrasScreen} from './src/Screens/NosotrasScreen';
-import {Pantalla1} from './src/Screens/Pantalla1';
 import {MenuScreen} from './src/Screens/MenuScreen';
-import {Pantalla2} from './src/Screens/Pantalla2';
-
 import {PapeleraScreen} from './src/Screens/PapeleraScreen';
 const Stack = createStackNavigator();
 
@@ -60,7 +57,7 @@ render() {
       <Stack.Navigator>
         <Stack.Screen name ="Menu principal" component={MenuScreen}/>
         <Stack.Screen name ="Screen FlatList" component={Screen_FlatList}/>
-        <Stack.Screen name ="Pantalla 3" component={PapeleraScreen}/>
+        <Stack.Screen name ="Papelera" component={PapeleraScreen}/>
         <Stack.Screen name ="Pantalla 4" component={NosotrasScreen}/>
         {/* aca tenemos q poner todas las paginas que creemos */}
       </Stack.Navigator>
