@@ -5,11 +5,8 @@ FlatList,
 Modal
 } from 'react-native';
 import {getData} from '../Biblioteca/RandomUsers';
-
 import {Tarjeta} from "../Componentes/Tarjeta";
 import Header from "../Componentes/Header";
-
-
 
 export class Screen_FlatList extends Component {
     constructor() {
@@ -21,35 +18,25 @@ export class Screen_FlatList extends Component {
     keyExtractor = (item, idx) => item.login.uuid.toString();
     renderItem = ({item}) => {
         return(
-        
-            
             <Tarjeta item={item}> </Tarjeta>
           
         )
-        
      }
-  
   separator=() => {
       return (
           <View style={styles.separator}/>
       )
   }
-
-
+//   NO ME SALE EL FKNG BUSCADORRRR :( :( :( :( :( :( :( :( :( 
 render() {
-
     return(
         <View>
                <Header/>
          <FlatList
             data={this.state.contactos} renderItem={this.renderItem} separator={this.separator} keyExtractor={this.keyExtractor}/>
-
-
         </View>
     )
-  
   }
-
     componentDidMount() {
         getData()
         .then( results => {
@@ -57,7 +44,6 @@ render() {
             this.setState({contactos: results})
         })
     }
-    
 }
 
 
