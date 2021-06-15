@@ -83,6 +83,23 @@ export const styles= StyleSheet.create({
     right: 20,
     top: 10
     },
+
+    SearchBar: {
+      height: 50,
+      width:350,
+      borderWidth: 1,
+      paddingLeft: 20,
+      margin: 5,
+      borderColor: '#00b8a9',
+      backgroundColor: '#FFFFFF',
+      marginTop: 10,
+      marginBottom: 10,
+      borderWidth: 3,
+      borderRadius: 10,
+      backgroundColor: 'azure', 
+    },
+
+    
   })
 
     
