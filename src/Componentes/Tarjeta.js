@@ -45,11 +45,14 @@ render () {
           <View style={styles.modal}> 
             
             <Text  style={styles.textModal}>
-              <Text > Location: {this.props.item.location.street.name} </Text>
+              <Text > Location: {this.props.item.location.street.name},{this.props.item.location.street.number}, {this.props.item.location.city}, {this.props.item.location.postcode} </Text> 
               {
+
               this.state.itemModal && 
-              this.state.itemModal.name.first &&
-              this.state.itemModal.location.street.name
+              this.state.itemModal.location.street.name &&
+              this.state.itemModal.location.street.number &&
+              this.state.itemModal.location.city &&
+              this.state.itemModal.location.postcode 
              
              }
 
