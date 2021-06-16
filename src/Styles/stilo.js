@@ -60,7 +60,7 @@ export const styles= StyleSheet.create({
    
     modal: {
       backgroundColor: 'white',
-      width: 150,
+      width: 300,
       height: 150,
       justifyContent: 'center',
       alignItems: 'center',
