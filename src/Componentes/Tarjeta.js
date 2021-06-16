@@ -31,7 +31,7 @@ render () {
          <Text style={styles.texto} > Email: {this.props.item.email}</Text>
          <Text styles={styles.texto}> Register date: {this.props.item.dob.date.substring(0,10)} ({this.props.item.dob.age})</Text>
          
-         {/* <Button title='View More' onPress={() => this.setState({showModal: !this.state.showModal}) }  > </Button> */}
+         {/* <Button title='View More' onPress={() => this.setState({showModal: !this.state.showModal}) }  > </Button>  */}
          
          <Modal 
          
