@@ -45,14 +45,20 @@ render () {
           <View style={styles.modal}> 
             
             <Text  style={styles.textModal}>
-              <Text > Location: {this.props.item.location.street.name},{this.props.item.location.street.number}, {this.props.item.location.city}, {this.props.item.location.postcode} </Text> 
+              <Text > Location: {this.props.item.location.street.name},{this.props.item.location.street.number}, {this.props.item.location.city},{this.props.item.location.country}, {this.props.item.location.postcode} </Text> 
+              <Text > Register Date: {this.props.item.registered.date.substring(0,10)}
+</Text> 
+              <Text > Phone: {this.props.item.phone} </Text> 
               {
 
               this.state.itemModal && 
               this.state.itemModal.location.street.name &&
               this.state.itemModal.location.street.number &&
               this.state.itemModal.location.city &&
-              this.state.itemModal.location.postcode 
+              this.state.itemModal.location.country &&
+              this.state.itemModal.location.postcode &&
+              this.state.itemModal.registered.date &&
+              this.state.itemModal.phone
              
              }
 
