@@ -20,8 +20,10 @@ showModal(item){
 
 render () {
   return(
+    
+  
 
-    <TouchableOpacity  onPress={() => this.showModal(item) } >
+    <TouchableOpacity  onPress={() => this.showModal(this.props.item) } >
          <View style={styles.container} >
          <View style={styles.tarjeta}>
          
@@ -31,8 +33,7 @@ render () {
          <Text style={styles.texto} > Email: {this.props.item.email}</Text>
          <Text styles={styles.texto}> Register date: {this.props.item.dob.date.substring(0,10)} ({this.props.item.dob.age})</Text>
          
-         {/* <Button title='View More' onPress={() => this.setState({showModal: !this.state.showModal}) }  > </Button>  */}
-         
+         {/* <Button title='View More' onPress={() => this.setState({showModal: !this.state.showModal}) }  > </Button>   */}
          <Modal 
          
          visible={this.state.showModal} 
@@ -44,10 +45,13 @@ render () {
           <View style={styles.modal}> 
             
             <Text  style={styles.textModal}>
+              <Text > Location: {this.props.item.location.street.name} </Text>
               {
               this.state.itemModal && 
-              this.state.itemModal.name.first
-              }
+              this.state.itemModal.name.first &&
+              this.state.itemModal.location.street.name
+             
+             }
 
               
               </Text> 

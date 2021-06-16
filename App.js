@@ -56,7 +56,7 @@ render() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name ="Menu principal" component={MenuScreen}/>
-        <Stack.Screen name ="Screen FlatList" component={Screen_FlatList}/>
+        <Stack.Screen name ="Screen FlatList"  component={Screen_FlatList} options={{title: "Contactos"}}/>
         <Stack.Screen name ="Papelera" component={PapeleraScreen}/>
         <Stack.Screen name ="NosotrasScreen" component={NosotrasScreen}/>
         {/* aca tenemos q poner todas las paginas que creemos */}
