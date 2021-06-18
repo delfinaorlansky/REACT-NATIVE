@@ -46,8 +46,7 @@ render () {
             
             <Text  style={styles.textModal}>
               <Text > Location: {this.props.item.location.street.name},{this.props.item.location.street.number}, {this.props.item.location.city},{this.props.item.location.country}, {this.props.item.location.postcode} </Text> 
-              <Text > Register Date: {this.props.item.registered.date.substring(0,10)}
-</Text> 
+              <Text > Register Date: {this.props.item.registered.date.substring(0,10)} </Text> 
               <Text > Phone: {this.props.item.phone} </Text> 
               {
 
