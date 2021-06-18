@@ -8,25 +8,6 @@ export async function getData() {
     }
 }
 
-export const loadMore = async ()=> {
-    let agregado = '';
-    getDataVerMas('@VerMas')
-    .then(resultado=> {
-      agregado = resultado
-    })
 
-
-    try {
-
-          fetch('https://randomuser.me/api/?results='+ agregado)
-          .then(response => response.json())
-          .then ((data)=>{
-            setDataIndex(data, '@guardado')
-          })
-
-    } catch (error) {
-      console.log(error);
-      return [];
-    }
-   
-    }
+    
+    

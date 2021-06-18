@@ -1,15 +1,16 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, {Component} from "react";
-import { TouchableOpacity, View, Image, Text, Modal} from "react-native";
+import { TouchableOpacity, View, Image, Text, Modal, Button} from "react-native";
 import { styles } from '../Styles/stilo';
-
+//import de 
 export class Tarjeta extends Component {
     
   constructor(){
       super();
         this.state = {
           showModal: false,
-          itemModal: null
-
+          itemModal: null,
+          tarjetasBorradas: []
         }
       }
     
@@ -17,16 +18,42 @@ showModal(item){
   this.setState({itemModal: item,   showModal: !this.state.showModal});
 }
    
+  //borrar tarjetas
+//   async removeItem(value){
+//     try{
+//   let storage = await AsyncStorage.getItem('@tarjetasBorradas') //es un string, obtenemos las tarjetas q borramos
+//   storage = JSON.parse(storage) //ahora pasa a ser un array
+//   if(storage==null) storage = []
+//   storage.push (value) //agregamos la nueva tarjeta q queremos borrar al array
+// const jsonValue = JSON.stringify(storage) 
+// await AsyncStorage.setItem('@tarjetasBorradas', jsonValue) 
+// await this.props.removeContact(value.login.uuid) //remove contact es un metodo asincronico, entonces necesita el awate
 
+// let arrayBorrados = [...this.state.personBorrada, ...Borrado]
+// this.setState({person: resultados, personBorrada: arrayBorrados})
+
+// storeDataBorrado(arrayBorrados, '@Borrados') }
+//    catch (error) {
+//        console.log(error);
+//    }
+// }
+borrar(idx){
+  let results = this.state.contactos.filter ((persona) => {})
+  return(
+    idx !== //distinto  a los uuix
+  )
+  //[...this.state.personBorrada, ...Borrado]
+}
 render () {
   return(
-    
-  
 
     <TouchableOpacity  onPress={() => this.showModal(this.props.item) } >
          <View style={styles.container} >
          <View style={styles.tarjeta}>
-         
+     <TouchableOpacity onPress ={()=> this.removeItem(this.props.item)}> 
+     <Text style={styles.closeButton} >  X
+     </Text>
+     </TouchableOpacity>
          <Image style={styles.imagen} source={{uri: this.props.item.picture.large}}/>
          <Text style= {styles.titulo}> {this.props.item.name.first}</Text>
          <Text style= {styles.titulo}> {this.props.item.name.last}</Text>
@@ -75,6 +102,13 @@ render () {
      </TouchableOpacity>
  )
 }
+// componentDidMount() {
+//   getData()
+//   .then( results => {
+//       console.log(results);
+//       this.setState({contactos: results})
+//   })
+// }
 }
 
 

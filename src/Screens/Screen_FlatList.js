@@ -7,19 +7,19 @@ Modal
 import {getData} from '../Biblioteca/RandomUsers';
 import {Tarjeta} from "../Componentes/Tarjeta";
 import Header from "../Componentes/Header";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export class Screen_FlatList extends Component {
     constructor() {
         super();
         this.state  = {
-            contactos:  []
+            contactos:  [],
         }
     }
     keyExtractor = (item, idx) => item.login.uuid.toString();
     renderItem = ({item}) => {
         return(
-            <Tarjeta item={item}> </Tarjeta>
-          
+            <Tarjeta item={item} removeContact={this.removeContact.bind(this)}> </Tarjeta> //.bind (this) xq estoy modificando el estado contactos
         )
      }
   separator=() => {
@@ -27,7 +27,22 @@ export class Screen_FlatList extends Component {
           <View style={styles.separator}/>
       )
   }
-//   NO ME SALE EL FKNG BUSCADORRRR :( :( :( :( :( :( :( :( :( 
+  async removeContact(id) {
+      let contactosFiltrados =  this.state.contactos.filter ((item)=> 
+          { return item.login.uuid !== id })
+           this.setState ({contactos:contactosFiltrados})
+          contactosFiltrados=JSON.stringify(contactosFiltrados)  //tenemos q borrar cada tarjeta del almacenamiento tambien
+          await AsyncStorage.setItem('@misContactos', contactosFiltrados)
+  }
+
+
+
+//   NO ME SALE EL BUSCADORRRR :( :( :( :( :( :( :( :( :( 
+    // filtrarTarjetas () { //esto lo tengo q definir en algun lado?
+    //     let dataParaFiltrar = document.querySelector('.inputDataFiltro').nodeValue   usamos textinput dentro del render
+    //     let campoAfiltrar = docuement.querySelector('.selectDataDiltro').nodeValue
+    // }
+
 render() {
     return(
         <View>
