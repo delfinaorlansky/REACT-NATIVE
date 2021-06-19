@@ -1,6 +1,6 @@
-export async function getData() {
+export async function getData(value) {
     try{
-        const resultado= await fetch('https://randomuser.me/api/?results=10');
+        const resultado= await fetch('https://randomuser.me/api/?results=' + value);
         const json = await resultado.json();
         return json.results;
     }catch(e) {

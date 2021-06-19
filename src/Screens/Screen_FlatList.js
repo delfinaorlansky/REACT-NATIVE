@@ -33,6 +33,8 @@ export class Screen_FlatList extends Component {
            this.setState ({contactos:contactosFiltrados})
           contactosFiltrados=JSON.stringify(contactosFiltrados)  //tenemos q borrar cada tarjeta del almacenamiento tambien
           await AsyncStorage.setItem('@misContactos', contactosFiltrados)
+
+         
   }
 
 
@@ -58,6 +60,9 @@ render() {
             console.log(results);
             this.setState({contactos: results})
         })
+
+       
+
     }
 }
 

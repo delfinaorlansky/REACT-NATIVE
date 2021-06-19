@@ -17,6 +17,8 @@ export class Tarjeta extends Component {
 showModal(item){
   this.setState({itemModal: item,   showModal: !this.state.showModal});
 }
+
+
    
   //borrar tarjetas
   async removeItem(value){
@@ -37,20 +39,16 @@ await this.props.removeContact(value.login.uuid) //remove contact es un metodo a
 let arrayBorrados = [...this.state.personBorrada, ...Borrado]
 this.setState({person: resultados, personBorrada: arrayBorrados})
 
-storeDataBorrado(arrayBorrados, '@Borrados') }
+// storeDataBorrado(arrayBorrados, '@Borrados') 
+
+}
    catch (error) {
        console.log(error);
    }
 }
 
 
-// borrar(idx){
-//   let results = this.state.contactos.filter ((persona) => {})
-//   return(
-//     idx !== //distinto  a los uuix
-//   )
-  //[...this.state.personBorrada, ...Borrado]
-// }
+
 render () {
   return(
 
@@ -67,7 +65,7 @@ render () {
          <Text style={styles.texto} > Email: {this.props.item.email}</Text>
          <Text styles={styles.texto}> Register date: {this.props.item.dob.date.substring(0,10)} ({this.props.item.dob.age})</Text>
          
-         {/* <Button title='View More' onPress={() => this.setState({showModal: !this.state.showModal}) }  > </Button>   */}
+       
          <Modal 
          
          visible={this.state.showModal} 
