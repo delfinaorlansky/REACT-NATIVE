@@ -19,31 +19,38 @@ showModal(item){
 }
    
   //borrar tarjetas
-//   async removeItem(value){
-//     try{
-//   let storage = await AsyncStorage.getItem('@tarjetasBorradas') //es un string, obtenemos las tarjetas q borramos
-//   storage = JSON.parse(storage) //ahora pasa a ser un array
-//   if(storage==null) storage = []
-//   storage.push (value) //agregamos la nueva tarjeta q queremos borrar al array
-// const jsonValue = JSON.stringify(storage) 
-// await AsyncStorage.setItem('@tarjetasBorradas', jsonValue) 
-// await this.props.removeContact(value.login.uuid) //remove contact es un metodo asincronico, entonces necesita el awate
+  async removeItem(value){
+   
+    try{
+  let storage = await AsyncStorage.getItem('@tarjetasBorradas') //es un string, obtenemos las tarjetas q borramos
+  storage = JSON.parse(storage) //ahora pasa a ser un array
+  
+  if(storage==null) storage = []
+  storage.push (value) //agregamos la nueva tarjeta q queremos borrar al array
 
-// let arrayBorrados = [...this.state.personBorrada, ...Borrado]
-// this.setState({person: resultados, personBorrada: arrayBorrados})
+  const jsonValue = JSON.stringify(storage) 
 
-// storeDataBorrado(arrayBorrados, '@Borrados') }
-//    catch (error) {
-//        console.log(error);
-//    }
-// }
-borrar(idx){
-  let results = this.state.contactos.filter ((persona) => {})
-  return(
-    idx !== //distinto  a los uuix
-  )
-  //[...this.state.personBorrada, ...Borrado]
+
+await AsyncStorage.setItem('@tarjetasBorradas', jsonValue) 
+await this.props.removeContact(value.login.uuid) //remove contact es un metodo asincronico, entonces necesita el awate
+
+let arrayBorrados = [...this.state.personBorrada, ...Borrado]
+this.setState({person: resultados, personBorrada: arrayBorrados})
+
+storeDataBorrado(arrayBorrados, '@Borrados') }
+   catch (error) {
+       console.log(error);
+   }
 }
+
+
+// borrar(idx){
+//   let results = this.state.contactos.filter ((persona) => {})
+//   return(
+//     idx !== //distinto  a los uuix
+//   )
+  //[...this.state.personBorrada, ...Borrado]
+// }
 render () {
   return(
 
@@ -102,14 +109,6 @@ render () {
      </TouchableOpacity>
  )
 }
-// componentDidMount() {
-//   getData()
-//   .then( results => {
-//       console.log(results);
-//       this.setState({contactos: results})
-//   })
-// }
 }
-
 
 

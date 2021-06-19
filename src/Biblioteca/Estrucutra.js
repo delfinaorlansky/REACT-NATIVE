@@ -8,7 +8,7 @@ export const getDataBorrar=async (key)=>{ //esto me recupera el get
       }
       }
   
- export const storeDataBorrar=async (value,key) => { //guardo lo que recupere
+ export const storeDataBorrado=async (value,key) => { //guardo lo que recupere
         try {
           const jsonValue = JSON.stringify(value)
           await AsyncStorage.setItem(key, jsonValue)
