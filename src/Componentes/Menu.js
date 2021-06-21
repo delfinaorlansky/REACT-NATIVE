@@ -36,7 +36,7 @@ render() {
 
 <View style= {stylesButton.stiloImportar}> 
 
-<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Pantalla 2')}> Tarjetas Importadas </Text>
+<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Pantalla 2')}> Ver Tarjetas </Text>
     
   </View>
 

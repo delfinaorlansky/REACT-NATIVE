@@ -42,7 +42,7 @@ render(){
             
             </View>
 
-            <View style={stylesNosotras.tarjetaNosotras} >
+            <View style={stylesNosotras.tarjeta} >
             <Image source={require('@Img/delfi.jpg')} style={stylesNosotras.imagen}  />
                 <Text style={stylesNosotras.titulo}>Delfina Orlansky</Text>
                 <Text style={stylesNosotras.texto} >Ubicación: Buenos Aires, Argentina</Text>
@@ -52,7 +52,7 @@ render(){
             </View>
        
 
-            <View style={stylesNosotras.tarjetaNosotras} >
+            <View style={stylesNosotras.tarjeta} >
             <Image source={require('@Img/mora.jpg')} style={stylesNosotras.imagen}  />
                 <Text style={stylesNosotras.titulo}>Mora Jaichengo</Text>
                 <Text style={stylesNosotras.texto} >Ubicación: Buenos Aires, Argentina</Text>
