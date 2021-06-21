@@ -160,7 +160,7 @@ export const stylesButton= StyleSheet.create({
      
       backgroundColor: '#F9D0F9',
       width: 400,
-      height: 150,
+      height: 120,
       justifyContent: 'center',
       alignItems: 'center',
       borderRadius: 20,

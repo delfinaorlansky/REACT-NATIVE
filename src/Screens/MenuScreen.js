@@ -26,7 +26,7 @@ render() {
 <View style= {stylesButton.container}>
 
 <View style= {stylesButton.stiloImportar}> 
-<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Screen FlatList')}> Tarjetas Importadas </Text>
+<Text style = {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Screen FlatList')}> Ver Tarjetas </Text>
   
   </View>
 
@@ -35,10 +35,12 @@ render() {
     </View>
 
     <View style= {stylesButton.stiloImportar}> 
-        <Text style= {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('NosotrasScreen')}> Acerca de nosotros! </Text>
+        <Text style= {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('Tarjetas Importadas')}> Tarjetas Importadas </Text>
     </View>
    
-  
+    <View style= {stylesButton.stiloImportar}> 
+        <Text style= {stylesButton.stiloImportarTexto} onPress={() => this.props.navigation.navigate('NosotrasScreen')}> Acerca de nosotros! </Text>
+    </View>
 
     </View>
   

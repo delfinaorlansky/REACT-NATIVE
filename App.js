@@ -19,6 +19,7 @@ import {Screen_FlatList} from './src/Screens/Screen_FlatList';
 import {NosotrasScreen} from './src/Screens/NosotrasScreen';
 import {MenuScreen} from './src/Screens/MenuScreen';
 import {PapeleraScreen} from './src/Screens/PapeleraScreen';
+import {ImportScreen} from './src/Screens/PapeleraScreen';
 const Stack = createStackNavigator();
 
 
@@ -59,6 +60,7 @@ render() {
         <Stack.Screen name ="Screen FlatList"  component={Screen_FlatList} options={{title: "Contactos"}}/>
         <Stack.Screen name ="Papelera" component={PapeleraScreen}/>
         <Stack.Screen name ="NosotrasScreen" component={NosotrasScreen}/>
+        <Stack.Screen name ="Tarjetas Importadas" component={ImportScreen}/>
         {/* aca tenemos q poner todas las paginas que creemos */}
       </Stack.Navigator>
     </NavigationContainer>
