@@ -51,10 +51,13 @@ this.setState({person: resultados, personBorrada: arrayBorrados})
 
 render () {
   return(
-
+    
     <TouchableOpacity  onPress={() => this.showModal(this.props.item) } >
          <View style={styles.container} >
          <View style={styles.tarjeta}>
+         <TouchableOpacity onPress={() => this.props.seleccionarTarjeta(this.props.item)}> 
+          <Text> hola </Text>
+        </TouchableOpacity> 
      <TouchableOpacity onPress ={()=> this.removeItem(this.props.item)}> 
      <Text style={styles.closeButton} >  X
      </Text>
@@ -76,17 +79,17 @@ render () {
           
           <View style={styles.modal}> 
             
-            <Text  style={styles.textModal}>
-              <Text > Location: {this.props.item.location.street.name},
+            <Text style={styles.textModal}>
+              <Text> Location: {this.props.item.location.street.name},
                                 {this.props.item.location.street.number}, 
                                 {this.props.item.location.city},
                                 {this.props.item.location.country}, 
                                 {this.props.item.location.postcode} 
               </Text> 
 
-              <Text > Register Date: {this.props.item.registered.date.substring(0,10)} </Text> 
+              <Text> Register Date: {this.props.item.registered.date.substring(0,10)} </Text> 
               
-              <Text > Phone: {this.props.item.phone} </Text> 
+              <Text> Phone: {this.props.item.phone} </Text> 
               {
 
               this.state.itemModal && 

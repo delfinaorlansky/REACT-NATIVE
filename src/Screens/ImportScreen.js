@@ -1,15 +1,14 @@
-import React, {Component} from 'react';
-import { View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text } from 'react-native';
 
-export class PapeleraScreen extends Component {
+export class ImportScreen extends Component {
     render() {
 
         return (
 
-<View>
-    <Text> TARJETAS IMPORTADAS</Text>
-</View>
-    
-    
-         ) }
+            <View>
+                <Text> TARJETAS IMPORTADAS</Text>
+            </View>
+        )
+    }   
 }
