@@ -33,11 +33,11 @@ return (
    <FontAwesomeIcon style= {stylesConsola.stiloIconSearch} icon= {faSearch} />
    <FontAwesomeIcon style= {stylesConsola.stiloIconBell} icon= {faBell} />
 
-   <TouchableOpacity onPress= {() => this.setState({textoIngresado: this.state.textHandlerNombre + "" + this.state.textHandlerApellido + "" + this.state.textHandlerTelefono})}>
+   {/* <TouchableOpacity onPress= {() => this.setState({textoIngresado: this.state.textHandlerNombre + "" + this.state.textHandlerApellido + "" + this.state.textHandlerTelefono})}> */}
 
    <FontAwesomeIcon style= {stylesConsola.stiloIconBars} icon={faBars}  />
    
-   </TouchableOpacity>
+   {/* </TouchableOpacity> */}
   
   <Text style={stylesConsola.stiloConsolaTexto}> MyConections </Text> 
 </View>

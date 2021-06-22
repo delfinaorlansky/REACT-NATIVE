@@ -54,7 +54,7 @@ render(){
 
             <View style={stylesNosotras.tarjeta} >
             <Image source={require('@Img/mora.jpg')} style={stylesNosotras.imagen}  />
-                <Text style={stylesNosotras.titulo}>Mora Jaichengo</Text>
+                <Text style={stylesNosotras.titulo}>Mora Jaichenco</Text>
                 <Text style={stylesNosotras.texto} >Ubicación: Buenos Aires, Argentina</Text>
                 <Text style={stylesNosotras.texto}>Fecha de nacimiento: 20 de diciembre de 1999  </Text>
                 <Text style={stylesNosotras.texto}>Edad: 21</Text>
