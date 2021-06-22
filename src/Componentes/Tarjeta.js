@@ -52,7 +52,7 @@ showModal(item){
 render () {
   return(
     
-    <TouchableOpacity  onPress={() => this.showModal(this.props.item) } >
+
          <View style={styles.container} >
          <View style={styles.tarjeta}>
          {/* <TouchableOpacity onPress={() => this.props.seleccionarTarjeta(this.props.item)}> 
@@ -68,7 +68,7 @@ render () {
          <Text style={styles.texto} > Email: {this.props.item.email}</Text>
          <Text styles={styles.texto}> Register date: {this.props.item.dob.date.substring(0,10)} ({this.props.item.dob.age})</Text>
          
-       
+         <Button title="Mirar Detalle"  onPress={() => this.setState({showModal: !this.state.showModal})}> </Button> 
          <Modal 
          
          visible={this.state.showModal} 
@@ -105,6 +105,7 @@ render () {
 
               
               </Text> 
+              
             <Text style={styles.closeButton} onPress={ () => this.setState({showModal: false})}> X </Text>
              </View>
 
@@ -114,7 +115,7 @@ render () {
          </View>
 
          </View>
-     </TouchableOpacity>
+    //  </TouchableOpacity>
  )
 }
 }

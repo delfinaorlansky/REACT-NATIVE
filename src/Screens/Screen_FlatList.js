@@ -26,47 +26,67 @@ export class Screen_FlatList extends Component {
         super();
         this.state = {
             contactos: [],
-            cantidadContactos: 0, //valor inicial
+            cantidadContactos: "0" , //valor inicial
             cargarDatos: false,
             text: '',
             search: '',
             contactoOriginal: [],
             textoBuscar: " ",
-            contactosImportados: []
+            contactosImportados: [],
+            numeroContactos: " ",
+            apiImportada: []
         }
     }
 
     componentDidMount() {
+      this.unsuscribe = this.props.navigation.addListener( "focus", () => {
+        this.getContactoStore();
+      })
     }
 
-    keyExtractor = (item, idx) => item.login.uuid.toString();
+    componentWillUnmount(){
+      this.unsuscribe()
+    }
+    // keyExtractor = (item, idx) => item.login.uuid.toString();
+    keyExtractor = (item, idx) => idx.toString();
     renderItem = ({ item }) => {
         return(
-            <Tarjeta item={item}>
+
+          <View> 
+            <Tarjeta item={item}>      </Tarjeta>
             {/* seleccionarTarjeta={this.seleccionarTarjeta.bind(this)} item={item} */}
             {/* removeContact={this.removeContact.bind(this)} */}
-            </Tarjeta>
-            // <Tarjeta  item={item} removeContact={this.removeContact.bind(this)}>
-            // </Tarjeta>
+            
+            <TouchableOpacity onPress= {() => this.storeOfContacts(item)}>
+              <Text> Importar contacto! </Text>
+            </TouchableOpacity>
+            
+            
+       
+            {/* // <Tarjeta  item={item} removeContact={this.removeContact.bind(this)}>
+            // </Tarjeta> */}
         
+            </View>
         )
     }
 
-    async getData (){
-      this.setState({cargarDatos: true});
-      let  contactos = await getData(this.state.cantidadContactos);
-      this.setState({contactos: contactos, cargarDatos: false});
-      Alert.alert("Usted importo " +  this.state.cantidadContactos + " contactos.")
-    }
+    // async getData (){
+    //   this.setState({cargarDatos: true});
+    //   let  contactos = await getData(this.state.cantidadContactos);
+    //   this.setState({contactos: contactos, cargarDatos: false});
+    //   Alert.alert("Usted importo " +  this.state.cantidadContactos + " contactos.")
+    // }
 
-    async storeDataContactos(){
-      try{
-        const jsonContactos= JSON.stringify(this.state.contactos);
-        await AsyncStorage.setItem("Contactos", jsonContactos);
+    // async storeDataContactos(){
+    //   try{
+    //     const jsonContactos= JSON.stringify(this.state.contactos);
+    //     await AsyncStorage.setItem("Contactos", jsonContactos);
 
 
-      } catch(error){console.log(error);}
-    }
+    //   } catch(error){console.log(error);}
+    // }
+
+   
 
 
     // seleccionarTarjeta = (item) => {
@@ -74,6 +94,56 @@ export class Screen_FlatList extends Component {
     //     AsyncStorage.setItem('@contactosImportados', this.state.contactosImportados) // @ solo va en el set no en el get. 
     //     console.log('contactosImportados', AsyncStorage.getItem('@contactosImportados'))
     // }
+
+    async storeOfContacts (value) {
+      try{
+        
+        alert("El contacto seleccionado fue importado correctamente")
+        
+        this.state.contactosImportados.push(value)
+
+        const jsonValue =  JSON.stringify(this.state.contactosImportados)
+
+        await AsyncStorage.setItem ("@misContactos" , jsonValue)
+
+        let cantidadDeContactosImportados = this.state.contactosImportados.length
+        this.setState({cantidadContactos: cantidadDeContactosImportados})
+
+        let resultado = this.state.contactos.filter ((item) => {
+          return item.login.uuid !== value.login.uuid
+        })
+
+        this.setState({contactos:resultado})
+      }catch (error) {
+        console.log(error);
+      }
+      }
+    
+      cargarContactos() {
+        this.getDataApi()
+        this.setState({cargarDatos: true})
+      }
+
+      async getDataApi () {
+        let tarjetas = await getData(this.state.numeroContactos)
+        this.setState({contactos: tarjetas, apiImportada: tarjetas, cargarDatos: false })
+      }
+
+      async getContactoStore () {
+        try{
+          const value = await AsyncStorage.getItem("@misContactos");
+          console.log(value);
+
+          if(value !== null) {
+            const tarjetas_recuperadas = JSON.parse(value);
+            this.setState({contactosImportados: tarjetas_recuperadas})
+          } else {
+            console.log("No existe");
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
 
     separator = () => {
         return (
@@ -160,39 +230,39 @@ export class Screen_FlatList extends Component {
                 {/* <TextInput style={styles.SearchBar} placeholder="Buscar" onChangeText={text => { this.setState({ search: text }); this.filter(text) }} value={search} /> */}
                
                <View> 
-                <TextInput placeholder="Ingrese cantidad" keyboardType="numeric" onChangeText={text => { this.setState({ cantidadContactos: text }) }} >
+                <TextInput placeholder="Ingrese cantidad" keyboardType="numeric" onChangeText={text => { this.setState({ numeroContactos: text }) }} >
   
                 </TextInput>
-                <Button title="Cargar"  onPress={() => this.getData()}></Button>
+                <Button title="Cargar"  onPress={this.cargarContactos.bind(this)}></Button>
                 {/* <Button title="Cargar" onPress={() => this.cargarTarjetas()}> Cargar</Button> */}
 
                 </View>
+
+                <Text> Cantidad de importados : {this.state.cantidadContactos} </Text>
                
                <View>
                   { 
                   this.state.cargarDatos
+                  ?  <ActivityIndicator
+                       color= "red"
+                       size={50}
+                  />
+
+                  :  <FlatList 
+                  data={this.state.contactos}
+                  renderItem={this.renderItem}
+                  separator={this.separator}
+                  keyExtractor={this.keyExtractor}
+                
+                  // onDelete={this.removeContact.bind(this)}
+              >
+              </FlatList>
                   }
 
-              <Button title='Importar contactos' onPress={()=>this.storeDataContactos()}/>     
+              {/* <Button title='Importar contactos' onPress={()=>this.storeDataContactos()}/>      */}
               
                </View>
-   
-                <View >
 
-               
-                    <FlatList 
-                        data={this.state.contactos}
-                        renderItem={this.renderItem}
-                        separator={this.separator}
-                        keyExtractor={this.keyExtractor}
-                        filter={this.filter}
-                        updateSearch={this.updateSearch}
-                        key={this.state.contactos}
-                        // onDelete={this.removeContact.bind(this)}
-                    >
-                    </FlatList>
-
-                    </View>
 
               
 
