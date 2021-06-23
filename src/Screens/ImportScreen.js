@@ -10,9 +10,6 @@ export class ImportScreen extends Component {
         this.state={
             contador: 0,
             contactosImportados: [],
-           
-  
-           
             }
         }
       
@@ -51,8 +48,6 @@ export class ImportScreen extends Component {
           console.log(error)
         }
       }
-
-
     render() {
 
         return (
