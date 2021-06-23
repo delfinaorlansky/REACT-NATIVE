@@ -34,7 +34,8 @@ render(){
             
         
             <View style={stylesNosotras.tarjeta} >
-                <Image source={require('@Img/trini.jpg')} style={stylesNosotras.imagen}  />
+                <Image source={require('@Img/trini.jpg')} style={stylesNosotras.imagen}  /> 
+                {/* importamos las imagenes localmente */}
                 <Text style={stylesNosotras.titulo}>Trinidad Pardo</Text>
                 <Text style={stylesNosotras.texto} >Ubicación: Buenos Aires, Argentina</Text>
                 <Text style={stylesNosotras.texto}>Fecha de nacimiento: 7 de febrero del 2001 </Text>
